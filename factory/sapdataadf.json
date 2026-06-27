@@ -1,0 +1,15 @@
+{
+	"name": "sapdataadf",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c88c571c-4c43-4d84-bd2e-af0b76d6faf9",
+		"tenantId": "6674e382-ac77-4d4d-8625-04a3f1a6e218"
+	}
+}

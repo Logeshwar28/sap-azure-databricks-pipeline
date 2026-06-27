@@ -1,0 +1,954 @@
+{
+	"name": "ds_bronze_mara",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_sapdata",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "mara.csv",
+				"folderPath": "Bronze",
+				"fileSystem": "sapdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "mandt",
+				"type": "String"
+			},
+			{
+				"name": "matnr",
+				"type": "String"
+			},
+			{
+				"name": "ersda",
+				"type": "String"
+			},
+			{
+				"name": "ernam",
+				"type": "String"
+			},
+			{
+				"name": "laeda",
+				"type": "String"
+			},
+			{
+				"name": "aenam",
+				"type": "String"
+			},
+			{
+				"name": "vpsta",
+				"type": "String"
+			},
+			{
+				"name": "pstat",
+				"type": "String"
+			},
+			{
+				"name": "lvorm",
+				"type": "String"
+			},
+			{
+				"name": "mtart",
+				"type": "String"
+			},
+			{
+				"name": "mbrsh",
+				"type": "String"
+			},
+			{
+				"name": "matkl",
+				"type": "String"
+			},
+			{
+				"name": "bismt",
+				"type": "String"
+			},
+			{
+				"name": "meins",
+				"type": "String"
+			},
+			{
+				"name": "bstme",
+				"type": "String"
+			},
+			{
+				"name": "zeinr",
+				"type": "String"
+			},
+			{
+				"name": "zeiar",
+				"type": "String"
+			},
+			{
+				"name": "zeivr",
+				"type": "String"
+			},
+			{
+				"name": "zeifo",
+				"type": "String"
+			},
+			{
+				"name": "aeszn",
+				"type": "String"
+			},
+			{
+				"name": "blatt",
+				"type": "String"
+			},
+			{
+				"name": "blanz",
+				"type": "String"
+			},
+			{
+				"name": "ferth",
+				"type": "String"
+			},
+			{
+				"name": "formt",
+				"type": "String"
+			},
+			{
+				"name": "groes",
+				"type": "String"
+			},
+			{
+				"name": "wrkst",
+				"type": "String"
+			},
+			{
+				"name": "normt",
+				"type": "String"
+			},
+			{
+				"name": "labor",
+				"type": "String"
+			},
+			{
+				"name": "ekwsl",
+				"type": "String"
+			},
+			{
+				"name": "brgew",
+				"type": "String"
+			},
+			{
+				"name": "ntgew",
+				"type": "String"
+			},
+			{
+				"name": "gewei",
+				"type": "String"
+			},
+			{
+				"name": "volum",
+				"type": "String"
+			},
+			{
+				"name": "voleh",
+				"type": "String"
+			},
+			{
+				"name": "behvo",
+				"type": "String"
+			},
+			{
+				"name": "raube",
+				"type": "String"
+			},
+			{
+				"name": "tempb",
+				"type": "String"
+			},
+			{
+				"name": "disst",
+				"type": "String"
+			},
+			{
+				"name": "tragr",
+				"type": "String"
+			},
+			{
+				"name": "stoff",
+				"type": "String"
+			},
+			{
+				"name": "spart",
+				"type": "String"
+			},
+			{
+				"name": "kunnr",
+				"type": "String"
+			},
+			{
+				"name": "eannr",
+				"type": "String"
+			},
+			{
+				"name": "wesch",
+				"type": "String"
+			},
+			{
+				"name": "bwvor",
+				"type": "String"
+			},
+			{
+				"name": "bwscl",
+				"type": "String"
+			},
+			{
+				"name": "saiso",
+				"type": "String"
+			},
+			{
+				"name": "etiar",
+				"type": "String"
+			},
+			{
+				"name": "etifo",
+				"type": "String"
+			},
+			{
+				"name": "entar",
+				"type": "String"
+			},
+			{
+				"name": "ean11",
+				"type": "String"
+			},
+			{
+				"name": "numtp",
+				"type": "String"
+			},
+			{
+				"name": "laeng",
+				"type": "String"
+			},
+			{
+				"name": "breit",
+				"type": "String"
+			},
+			{
+				"name": "hoehe",
+				"type": "String"
+			},
+			{
+				"name": "meabm",
+				"type": "String"
+			},
+			{
+				"name": "prdha",
+				"type": "String"
+			},
+			{
+				"name": "aeklk",
+				"type": "String"
+			},
+			{
+				"name": "cadkz",
+				"type": "String"
+			},
+			{
+				"name": "qmpur",
+				"type": "String"
+			},
+			{
+				"name": "ergew",
+				"type": "String"
+			},
+			{
+				"name": "ergei",
+				"type": "String"
+			},
+			{
+				"name": "ervol",
+				"type": "String"
+			},
+			{
+				"name": "ervoe",
+				"type": "String"
+			},
+			{
+				"name": "gewto",
+				"type": "String"
+			},
+			{
+				"name": "volto",
+				"type": "String"
+			},
+			{
+				"name": "vabme",
+				"type": "String"
+			},
+			{
+				"name": "kzrev",
+				"type": "String"
+			},
+			{
+				"name": "kzkfg",
+				"type": "String"
+			},
+			{
+				"name": "xchpf",
+				"type": "String"
+			},
+			{
+				"name": "vhart",
+				"type": "String"
+			},
+			{
+				"name": "fuelg",
+				"type": "String"
+			},
+			{
+				"name": "stfak",
+				"type": "String"
+			},
+			{
+				"name": "magrv",
+				"type": "String"
+			},
+			{
+				"name": "begru",
+				"type": "String"
+			},
+			{
+				"name": "datab",
+				"type": "String"
+			},
+			{
+				"name": "liqdt",
+				"type": "String"
+			},
+			{
+				"name": "saisj",
+				"type": "String"
+			},
+			{
+				"name": "plgtp",
+				"type": "String"
+			},
+			{
+				"name": "mlgut",
+				"type": "String"
+			},
+			{
+				"name": "extwg",
+				"type": "String"
+			},
+			{
+				"name": "satnr",
+				"type": "String"
+			},
+			{
+				"name": "attyp",
+				"type": "String"
+			},
+			{
+				"name": "kzkup",
+				"type": "String"
+			},
+			{
+				"name": "kznfm",
+				"type": "String"
+			},
+			{
+				"name": "pmata",
+				"type": "String"
+			},
+			{
+				"name": "mstae",
+				"type": "String"
+			},
+			{
+				"name": "mstav",
+				"type": "String"
+			},
+			{
+				"name": "mstde",
+				"type": "String"
+			},
+			{
+				"name": "mstdv",
+				"type": "String"
+			},
+			{
+				"name": "taklv",
+				"type": "String"
+			},
+			{
+				"name": "rbnrm",
+				"type": "String"
+			},
+			{
+				"name": "mhdrz",
+				"type": "String"
+			},
+			{
+				"name": "mhdhb",
+				"type": "String"
+			},
+			{
+				"name": "mhdlp",
+				"type": "String"
+			},
+			{
+				"name": "inhme",
+				"type": "String"
+			},
+			{
+				"name": "inhal",
+				"type": "String"
+			},
+			{
+				"name": "vpreh",
+				"type": "String"
+			},
+			{
+				"name": "etiag",
+				"type": "String"
+			},
+			{
+				"name": "inhbr",
+				"type": "String"
+			},
+			{
+				"name": "cmeth",
+				"type": "String"
+			},
+			{
+				"name": "cuobf",
+				"type": "String"
+			},
+			{
+				"name": "kzumw",
+				"type": "String"
+			},
+			{
+				"name": "kosch",
+				"type": "String"
+			},
+			{
+				"name": "sprof",
+				"type": "String"
+			},
+			{
+				"name": "nrfhg",
+				"type": "String"
+			},
+			{
+				"name": "mfrpn",
+				"type": "String"
+			},
+			{
+				"name": "mfrnr",
+				"type": "String"
+			},
+			{
+				"name": "bmatn",
+				"type": "String"
+			},
+			{
+				"name": "mprof",
+				"type": "String"
+			},
+			{
+				"name": "kzwsm",
+				"type": "String"
+			},
+			{
+				"name": "saity",
+				"type": "String"
+			},
+			{
+				"name": "profl",
+				"type": "String"
+			},
+			{
+				"name": "ihivi",
+				"type": "String"
+			},
+			{
+				"name": "iloos",
+				"type": "String"
+			},
+			{
+				"name": "serlv",
+				"type": "String"
+			},
+			{
+				"name": "kzgvh",
+				"type": "String"
+			},
+			{
+				"name": "xgchp",
+				"type": "String"
+			},
+			{
+				"name": "kzeff",
+				"type": "String"
+			},
+			{
+				"name": "compl",
+				"type": "String"
+			},
+			{
+				"name": "iprkz",
+				"type": "String"
+			},
+			{
+				"name": "rdmhd",
+				"type": "String"
+			},
+			{
+				"name": "przus",
+				"type": "String"
+			},
+			{
+				"name": "mtpos_mara",
+				"type": "String"
+			},
+			{
+				"name": "bflme",
+				"type": "String"
+			},
+			{
+				"name": "matfi",
+				"type": "String"
+			},
+			{
+				"name": "cmrel",
+				"type": "String"
+			},
+			{
+				"name": "bbtyp",
+				"type": "String"
+			},
+			{
+				"name": "sled_bbd",
+				"type": "String"
+			},
+			{
+				"name": "gtin_variant",
+				"type": "String"
+			},
+			{
+				"name": "gennr",
+				"type": "String"
+			},
+			{
+				"name": "rmatp",
+				"type": "String"
+			},
+			{
+				"name": "gds_relevant",
+				"type": "String"
+			},
+			{
+				"name": "weora",
+				"type": "String"
+			},
+			{
+				"name": "hutyp_dflt",
+				"type": "String"
+			},
+			{
+				"name": "pilferable",
+				"type": "String"
+			},
+			{
+				"name": "whstc",
+				"type": "String"
+			},
+			{
+				"name": "whmatgr",
+				"type": "String"
+			},
+			{
+				"name": "hndlcode",
+				"type": "String"
+			},
+			{
+				"name": "hazmat",
+				"type": "String"
+			},
+			{
+				"name": "hutyp",
+				"type": "String"
+			},
+			{
+				"name": "tare_var",
+				"type": "String"
+			},
+			{
+				"name": "maxc",
+				"type": "String"
+			},
+			{
+				"name": "maxc_tol",
+				"type": "String"
+			},
+			{
+				"name": "maxl",
+				"type": "String"
+			},
+			{
+				"name": "maxb",
+				"type": "String"
+			},
+			{
+				"name": "maxh",
+				"type": "String"
+			},
+			{
+				"name": "maxdim_uom",
+				"type": "String"
+			},
+			{
+				"name": "herkl",
+				"type": "String"
+			},
+			{
+				"name": "mfrgr",
+				"type": "String"
+			},
+			{
+				"name": "qqtime",
+				"type": "String"
+			},
+			{
+				"name": "qqtimeuom",
+				"type": "String"
+			},
+			{
+				"name": "qgrp",
+				"type": "String"
+			},
+			{
+				"name": "serial",
+				"type": "String"
+			},
+			{
+				"name": "ps_smartform",
+				"type": "String"
+			},
+			{
+				"name": "logunit",
+				"type": "String"
+			},
+			{
+				"name": "cwqrel",
+				"type": "String"
+			},
+			{
+				"name": "cwqproc",
+				"type": "String"
+			},
+			{
+				"name": "cwqtolgr",
+				"type": "String"
+			},
+			{
+				"name": "adprof",
+				"type": "String"
+			},
+			{
+				"name": "ipmipproduct",
+				"type": "String"
+			},
+			{
+				"name": "allow_pmat_igno",
+				"type": "String"
+			},
+			{
+				"name": "medium",
+				"type": "String"
+			},
+			{
+				"name": "commodity",
+				"type": "String"
+			},
+			{
+				"name": "animal_origin",
+				"type": "String"
+			},
+			{
+				"name": "textile_comp_ind",
+				"type": "String"
+			},
+			{
+				"name": "sgt_csgr",
+				"type": "String"
+			},
+			{
+				"name": "sgt_covsa",
+				"type": "String"
+			},
+			{
+				"name": "sgt_stat",
+				"type": "String"
+			},
+			{
+				"name": "sgt_scope",
+				"type": "String"
+			},
+			{
+				"name": "sgt_rel",
+				"type": "String"
+			},
+			{
+				"name": "fsh_mg_at1",
+				"type": "String"
+			},
+			{
+				"name": "fsh_mg_at2",
+				"type": "String"
+			},
+			{
+				"name": "fsh_mg_at3",
+				"type": "String"
+			},
+			{
+				"name": "fsh_sealv",
+				"type": "String"
+			},
+			{
+				"name": "fsh_seaim",
+				"type": "String"
+			},
+			{
+				"name": "fsh_sc_mid",
+				"type": "String"
+			},
+			{
+				"name": "anp",
+				"type": "String"
+			},
+			{
+				"name": "psm_code",
+				"type": "String"
+			},
+			{
+				"name": "bev1_luleinh",
+				"type": "String"
+			},
+			{
+				"name": "bev1_luldegrp",
+				"type": "String"
+			},
+			{
+				"name": "bev1_nestruccat",
+				"type": "String"
+			},
+			{
+				"name": "dsd_sl_toltyp",
+				"type": "String"
+			},
+			{
+				"name": "dsd_sv_cnt_grp",
+				"type": "String"
+			},
+			{
+				"name": "dsd_vc_group",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_tilt_ind",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_stack_ind",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_bot_ind",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_top_ind",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_stack_no",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_pal_ind",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_pal_ovr_d",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_pal_ovr_w",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_pal_b_ht",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_pal_min_h",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_tol_b_ht",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_no_p_gvh",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_quan_unit",
+				"type": "String"
+			},
+			{
+				"name": "vso_r_kzgvh_ind",
+				"type": "String"
+			},
+			{
+				"name": "packcode",
+				"type": "String"
+			},
+			{
+				"name": "dg_pack_status",
+				"type": "String"
+			},
+			{
+				"name": "mcond",
+				"type": "String"
+			},
+			{
+				"name": "retdelc",
+				"type": "String"
+			},
+			{
+				"name": "loglev_reto",
+				"type": "String"
+			},
+			{
+				"name": "nsnid",
+				"type": "String"
+			},
+			{
+				"name": "adspc_spc",
+				"type": "String"
+			},
+			{
+				"name": "imatn",
+				"type": "String"
+			},
+			{
+				"name": "picnum",
+				"type": "String"
+			},
+			{
+				"name": "bstat",
+				"type": "String"
+			},
+			{
+				"name": "color_atinn",
+				"type": "String"
+			},
+			{
+				"name": "size1_atinn",
+				"type": "String"
+			},
+			{
+				"name": "size2_atinn",
+				"type": "String"
+			},
+			{
+				"name": "color",
+				"type": "String"
+			},
+			{
+				"name": "size1",
+				"type": "String"
+			},
+			{
+				"name": "size2",
+				"type": "String"
+			},
+			{
+				"name": "free_char",
+				"type": "String"
+			},
+			{
+				"name": "care_code",
+				"type": "String"
+			},
+			{
+				"name": "brand_id",
+				"type": "String"
+			},
+			{
+				"name": "fiber_code1",
+				"type": "String"
+			},
+			{
+				"name": "fiber_part1",
+				"type": "String"
+			},
+			{
+				"name": "fiber_code2",
+				"type": "String"
+			},
+			{
+				"name": "fiber_part2",
+				"type": "String"
+			},
+			{
+				"name": "fiber_code3",
+				"type": "String"
+			},
+			{
+				"name": "fiber_part3",
+				"type": "String"
+			},
+			{
+				"name": "fiber_code4",
+				"type": "String"
+			},
+			{
+				"name": "fiber_part4",
+				"type": "String"
+			},
+			{
+				"name": "fiber_code5",
+				"type": "String"
+			},
+			{
+				"name": "fiber_part5",
+				"type": "String"
+			},
+			{
+				"name": "fashgrd",
+				"type": "String"
+			},
+			{
+				"name": "operation_flag",
+				"type": "String"
+			},
+			{
+				"name": "is_deleted",
+				"type": "String"
+			},
+			{
+				"name": "recordstamp",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

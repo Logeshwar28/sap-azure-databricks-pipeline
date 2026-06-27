@@ -1,0 +1,526 @@
+{
+	"name": "ds_bronze_bkpf",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_sapdata",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "bkpf.csv",
+				"folderPath": "Bronze",
+				"fileSystem": "sapdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "mandt",
+				"type": "String"
+			},
+			{
+				"name": "bukrs",
+				"type": "String"
+			},
+			{
+				"name": "belnr",
+				"type": "String"
+			},
+			{
+				"name": "gjahr",
+				"type": "String"
+			},
+			{
+				"name": "blart",
+				"type": "String"
+			},
+			{
+				"name": "bldat",
+				"type": "String"
+			},
+			{
+				"name": "budat",
+				"type": "String"
+			},
+			{
+				"name": "monat",
+				"type": "String"
+			},
+			{
+				"name": "cpudt",
+				"type": "String"
+			},
+			{
+				"name": "cputm",
+				"type": "String"
+			},
+			{
+				"name": "aedat",
+				"type": "String"
+			},
+			{
+				"name": "upddt",
+				"type": "String"
+			},
+			{
+				"name": "wwert",
+				"type": "String"
+			},
+			{
+				"name": "usnam",
+				"type": "String"
+			},
+			{
+				"name": "tcode",
+				"type": "String"
+			},
+			{
+				"name": "bvorg",
+				"type": "String"
+			},
+			{
+				"name": "xblnr",
+				"type": "String"
+			},
+			{
+				"name": "dbblg",
+				"type": "String"
+			},
+			{
+				"name": "stblg",
+				"type": "String"
+			},
+			{
+				"name": "stjah",
+				"type": "String"
+			},
+			{
+				"name": "bktxt",
+				"type": "String"
+			},
+			{
+				"name": "waers",
+				"type": "String"
+			},
+			{
+				"name": "kursf",
+				"type": "String"
+			},
+			{
+				"name": "kzwrs",
+				"type": "String"
+			},
+			{
+				"name": "kzkrs",
+				"type": "String"
+			},
+			{
+				"name": "bstat",
+				"type": "String"
+			},
+			{
+				"name": "xnetb",
+				"type": "String"
+			},
+			{
+				"name": "frath",
+				"type": "String"
+			},
+			{
+				"name": "xrueb",
+				"type": "String"
+			},
+			{
+				"name": "glvor",
+				"type": "String"
+			},
+			{
+				"name": "grpid",
+				"type": "String"
+			},
+			{
+				"name": "dokid",
+				"type": "String"
+			},
+			{
+				"name": "arcid",
+				"type": "String"
+			},
+			{
+				"name": "iblar",
+				"type": "String"
+			},
+			{
+				"name": "awtyp",
+				"type": "String"
+			},
+			{
+				"name": "awkey",
+				"type": "String"
+			},
+			{
+				"name": "fikrs",
+				"type": "String"
+			},
+			{
+				"name": "hwaer",
+				"type": "String"
+			},
+			{
+				"name": "hwae2",
+				"type": "String"
+			},
+			{
+				"name": "hwae3",
+				"type": "String"
+			},
+			{
+				"name": "kurs2",
+				"type": "String"
+			},
+			{
+				"name": "kurs3",
+				"type": "String"
+			},
+			{
+				"name": "basw2",
+				"type": "String"
+			},
+			{
+				"name": "basw3",
+				"type": "String"
+			},
+			{
+				"name": "umrd2",
+				"type": "String"
+			},
+			{
+				"name": "umrd3",
+				"type": "String"
+			},
+			{
+				"name": "xstov",
+				"type": "String"
+			},
+			{
+				"name": "stodt",
+				"type": "String"
+			},
+			{
+				"name": "xmwst",
+				"type": "String"
+			},
+			{
+				"name": "curt2",
+				"type": "String"
+			},
+			{
+				"name": "curt3",
+				"type": "String"
+			},
+			{
+				"name": "kuty2",
+				"type": "String"
+			},
+			{
+				"name": "kuty3",
+				"type": "String"
+			},
+			{
+				"name": "xsnet",
+				"type": "String"
+			},
+			{
+				"name": "ausbk",
+				"type": "String"
+			},
+			{
+				"name": "xusvr",
+				"type": "String"
+			},
+			{
+				"name": "duefl",
+				"type": "String"
+			},
+			{
+				"name": "awsys",
+				"type": "String"
+			},
+			{
+				"name": "txkrs",
+				"type": "String"
+			},
+			{
+				"name": "ctxkrs",
+				"type": "String"
+			},
+			{
+				"name": "lotkz",
+				"type": "String"
+			},
+			{
+				"name": "xwvof",
+				"type": "String"
+			},
+			{
+				"name": "stgrd",
+				"type": "String"
+			},
+			{
+				"name": "ppnam",
+				"type": "String"
+			},
+			{
+				"name": "ppdat",
+				"type": "String"
+			},
+			{
+				"name": "pptme",
+				"type": "String"
+			},
+			{
+				"name": "pptcod",
+				"type": "String"
+			},
+			{
+				"name": "brnch",
+				"type": "String"
+			},
+			{
+				"name": "numpg",
+				"type": "String"
+			},
+			{
+				"name": "adisc",
+				"type": "String"
+			},
+			{
+				"name": "xref1_hd",
+				"type": "String"
+			},
+			{
+				"name": "xref2_hd",
+				"type": "String"
+			},
+			{
+				"name": "xreversal",
+				"type": "String"
+			},
+			{
+				"name": "reindat",
+				"type": "String"
+			},
+			{
+				"name": "rldnr",
+				"type": "String"
+			},
+			{
+				"name": "ldgrp",
+				"type": "String"
+			},
+			{
+				"name": "propmano",
+				"type": "String"
+			},
+			{
+				"name": "xblnr_alt",
+				"type": "String"
+			},
+			{
+				"name": "vatdate",
+				"type": "String"
+			},
+			{
+				"name": "doccat",
+				"type": "String"
+			},
+			{
+				"name": "xsplit",
+				"type": "String"
+			},
+			{
+				"name": "cash_alloc",
+				"type": "String"
+			},
+			{
+				"name": "follow_on",
+				"type": "String"
+			},
+			{
+				"name": "xreorg",
+				"type": "String"
+			},
+			{
+				"name": "subset",
+				"type": "String"
+			},
+			{
+				"name": "kurst",
+				"type": "String"
+			},
+			{
+				"name": "kursx",
+				"type": "String"
+			},
+			{
+				"name": "kur2x",
+				"type": "String"
+			},
+			{
+				"name": "kur3x",
+				"type": "String"
+			},
+			{
+				"name": "xmca",
+				"type": "String"
+			},
+			{
+				"name": "resubmission",
+				"type": "String"
+			},
+			{
+				"name": "sapf15_status",
+				"type": "String"
+			},
+			{
+				"name": "psoty",
+				"type": "String"
+			},
+			{
+				"name": "psoak",
+				"type": "String"
+			},
+			{
+				"name": "psoks",
+				"type": "String"
+			},
+			{
+				"name": "psosg",
+				"type": "String"
+			},
+			{
+				"name": "psofn",
+				"type": "String"
+			},
+			{
+				"name": "intform",
+				"type": "String"
+			},
+			{
+				"name": "intdate",
+				"type": "String"
+			},
+			{
+				"name": "psobt",
+				"type": "String"
+			},
+			{
+				"name": "psozl",
+				"type": "String"
+			},
+			{
+				"name": "psodt",
+				"type": "String"
+			},
+			{
+				"name": "psotm",
+				"type": "String"
+			},
+			{
+				"name": "fm_umart",
+				"type": "String"
+			},
+			{
+				"name": "ccins",
+				"type": "String"
+			},
+			{
+				"name": "ccnum",
+				"type": "String"
+			},
+			{
+				"name": "ssblk",
+				"type": "String"
+			},
+			{
+				"name": "batch",
+				"type": "String"
+			},
+			{
+				"name": "sname",
+				"type": "String"
+			},
+			{
+				"name": "sampled",
+				"type": "String"
+			},
+			{
+				"name": "exclude_flag",
+				"type": "String"
+			},
+			{
+				"name": "blind",
+				"type": "String"
+			},
+			{
+				"name": "offset_status",
+				"type": "String"
+			},
+			{
+				"name": "offset_refer_dat",
+				"type": "String"
+			},
+			{
+				"name": "penrc",
+				"type": "String"
+			},
+			{
+				"name": "knumv",
+				"type": "String"
+			},
+			{
+				"name": "pybastyp",
+				"type": "String"
+			},
+			{
+				"name": "pybasno",
+				"type": "String"
+			},
+			{
+				"name": "pybasdat",
+				"type": "String"
+			},
+			{
+				"name": "pyiban",
+				"type": "String"
+			},
+			{
+				"name": "inwardno_hd",
+				"type": "String"
+			},
+			{
+				"name": "inwarddt_hd",
+				"type": "String"
+			},
+			{
+				"name": "operation_flag",
+				"type": "String"
+			},
+			{
+				"name": "is_deleted",
+				"type": "String"
+			},
+			{
+				"name": "recordstamp",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
