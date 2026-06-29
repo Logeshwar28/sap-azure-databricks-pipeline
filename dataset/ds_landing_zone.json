@@ -1,17 +1,26 @@
 {
-	"name": "ds_bronze_vbak",
+	"name": "ds_landing_zone",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adls_sapdata",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"file_name": {
+				"type": "string",
+				"defaultValue": "file_name"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "vbak.csv",
-				"folderPath": "Bronze",
+				"fileName": {
+					"value": "@concat(dataset().file_name,'.csv')",
+					"type": "Expression"
+				},
+				"folderPath": "Landing_Zone",
 				"fileSystem": "sapdata"
 			},
 			"columnDelimiter": ",",
@@ -25,203 +34,39 @@
 				"type": "String"
 			},
 			{
-				"name": "vbeln",
+				"name": "bukrs",
 				"type": "String"
 			},
 			{
-				"name": "erdat",
+				"name": "belnr",
 				"type": "String"
 			},
 			{
-				"name": "erzet",
+				"name": "gjahr",
 				"type": "String"
 			},
 			{
-				"name": "ernam",
+				"name": "blart",
 				"type": "String"
 			},
 			{
-				"name": "angdt",
+				"name": "bldat",
 				"type": "String"
 			},
 			{
-				"name": "bnddt",
+				"name": "budat",
 				"type": "String"
 			},
 			{
-				"name": "audat",
+				"name": "monat",
 				"type": "String"
 			},
 			{
-				"name": "vbtyp",
+				"name": "cpudt",
 				"type": "String"
 			},
 			{
-				"name": "trvog",
-				"type": "String"
-			},
-			{
-				"name": "auart",
-				"type": "String"
-			},
-			{
-				"name": "augru",
-				"type": "String"
-			},
-			{
-				"name": "gwldt",
-				"type": "String"
-			},
-			{
-				"name": "submi",
-				"type": "String"
-			},
-			{
-				"name": "lifsk",
-				"type": "String"
-			},
-			{
-				"name": "faksk",
-				"type": "String"
-			},
-			{
-				"name": "netwr",
-				"type": "String"
-			},
-			{
-				"name": "waerk",
-				"type": "String"
-			},
-			{
-				"name": "vkorg",
-				"type": "String"
-			},
-			{
-				"name": "vtweg",
-				"type": "String"
-			},
-			{
-				"name": "spart",
-				"type": "String"
-			},
-			{
-				"name": "vkgrp",
-				"type": "String"
-			},
-			{
-				"name": "vkbur",
-				"type": "String"
-			},
-			{
-				"name": "gsber",
-				"type": "String"
-			},
-			{
-				"name": "gskst",
-				"type": "String"
-			},
-			{
-				"name": "guebg",
-				"type": "String"
-			},
-			{
-				"name": "gueen",
-				"type": "String"
-			},
-			{
-				"name": "knumv",
-				"type": "String"
-			},
-			{
-				"name": "vdatu",
-				"type": "String"
-			},
-			{
-				"name": "vprgr",
-				"type": "String"
-			},
-			{
-				"name": "autlf",
-				"type": "String"
-			},
-			{
-				"name": "vbkla",
-				"type": "String"
-			},
-			{
-				"name": "vbklt",
-				"type": "String"
-			},
-			{
-				"name": "kalsm",
-				"type": "String"
-			},
-			{
-				"name": "vsbed",
-				"type": "String"
-			},
-			{
-				"name": "fkara",
-				"type": "String"
-			},
-			{
-				"name": "awahr",
-				"type": "String"
-			},
-			{
-				"name": "ktext",
-				"type": "String"
-			},
-			{
-				"name": "bstnk",
-				"type": "String"
-			},
-			{
-				"name": "bsark",
-				"type": "String"
-			},
-			{
-				"name": "bstdk",
-				"type": "String"
-			},
-			{
-				"name": "bstzd",
-				"type": "String"
-			},
-			{
-				"name": "ihrez",
-				"type": "String"
-			},
-			{
-				"name": "bname",
-				"type": "String"
-			},
-			{
-				"name": "telf1",
-				"type": "String"
-			},
-			{
-				"name": "mahza",
-				"type": "String"
-			},
-			{
-				"name": "mahdt",
-				"type": "String"
-			},
-			{
-				"name": "kunnr",
-				"type": "String"
-			},
-			{
-				"name": "kostl",
-				"type": "String"
-			},
-			{
-				"name": "stafo",
-				"type": "String"
-			},
-			{
-				"name": "stwae",
+				"name": "cputm",
 				"type": "String"
 			},
 			{
@@ -229,139 +74,23 @@
 				"type": "String"
 			},
 			{
-				"name": "kvgr1",
+				"name": "upddt",
 				"type": "String"
 			},
 			{
-				"name": "kvgr2",
+				"name": "wwert",
 				"type": "String"
 			},
 			{
-				"name": "kvgr3",
+				"name": "usnam",
 				"type": "String"
 			},
 			{
-				"name": "kvgr4",
+				"name": "tcode",
 				"type": "String"
 			},
 			{
-				"name": "kvgr5",
-				"type": "String"
-			},
-			{
-				"name": "knuma",
-				"type": "String"
-			},
-			{
-				"name": "kokrs",
-				"type": "String"
-			},
-			{
-				"name": "ps_psp_pnr",
-				"type": "String"
-			},
-			{
-				"name": "kurst",
-				"type": "String"
-			},
-			{
-				"name": "kkber",
-				"type": "String"
-			},
-			{
-				"name": "knkli",
-				"type": "String"
-			},
-			{
-				"name": "grupp",
-				"type": "String"
-			},
-			{
-				"name": "sbgrp",
-				"type": "String"
-			},
-			{
-				"name": "ctlpc",
-				"type": "String"
-			},
-			{
-				"name": "cmwae",
-				"type": "String"
-			},
-			{
-				"name": "cmfre",
-				"type": "String"
-			},
-			{
-				"name": "cmnup",
-				"type": "String"
-			},
-			{
-				"name": "cmngv",
-				"type": "String"
-			},
-			{
-				"name": "amtbl",
-				"type": "String"
-			},
-			{
-				"name": "hityp_pr",
-				"type": "String"
-			},
-			{
-				"name": "abrvw",
-				"type": "String"
-			},
-			{
-				"name": "abdis",
-				"type": "String"
-			},
-			{
-				"name": "vgbel",
-				"type": "String"
-			},
-			{
-				"name": "objnr",
-				"type": "String"
-			},
-			{
-				"name": "bukrs_vf",
-				"type": "String"
-			},
-			{
-				"name": "taxk1",
-				"type": "String"
-			},
-			{
-				"name": "taxk2",
-				"type": "String"
-			},
-			{
-				"name": "taxk3",
-				"type": "String"
-			},
-			{
-				"name": "taxk4",
-				"type": "String"
-			},
-			{
-				"name": "taxk5",
-				"type": "String"
-			},
-			{
-				"name": "taxk6",
-				"type": "String"
-			},
-			{
-				"name": "taxk7",
-				"type": "String"
-			},
-			{
-				"name": "taxk8",
-				"type": "String"
-			},
-			{
-				"name": "taxk9",
+				"name": "bvorg",
 				"type": "String"
 			},
 			{
@@ -369,267 +98,423 @@
 				"type": "String"
 			},
 			{
-				"name": "zuonr",
+				"name": "dbblg",
 				"type": "String"
 			},
 			{
-				"name": "vgtyp",
+				"name": "stblg",
 				"type": "String"
 			},
 			{
-				"name": "kalsm_ch",
+				"name": "stjah",
 				"type": "String"
 			},
 			{
-				"name": "agrzr",
+				"name": "bktxt",
 				"type": "String"
 			},
 			{
-				"name": "aufnr",
+				"name": "waers",
 				"type": "String"
 			},
 			{
-				"name": "qmnum",
+				"name": "kursf",
 				"type": "String"
 			},
 			{
-				"name": "vbeln_grp",
+				"name": "kzwrs",
 				"type": "String"
 			},
 			{
-				"name": "scheme_grp",
+				"name": "kzkrs",
 				"type": "String"
 			},
 			{
-				"name": "abruf_part",
+				"name": "bstat",
 				"type": "String"
 			},
 			{
-				"name": "abhod",
+				"name": "xnetb",
 				"type": "String"
 			},
 			{
-				"name": "abhov",
+				"name": "frath",
 				"type": "String"
 			},
 			{
-				"name": "abhob",
+				"name": "xrueb",
 				"type": "String"
 			},
 			{
-				"name": "rplnr",
+				"name": "glvor",
 				"type": "String"
 			},
 			{
-				"name": "vzeit",
+				"name": "grpid",
 				"type": "String"
 			},
 			{
-				"name": "stceg_l",
+				"name": "dokid",
 				"type": "String"
 			},
 			{
-				"name": "landtx",
+				"name": "arcid",
 				"type": "String"
 			},
 			{
-				"name": "xegdr",
+				"name": "iblar",
 				"type": "String"
 			},
 			{
-				"name": "enqueue_grp",
+				"name": "awtyp",
 				"type": "String"
 			},
 			{
-				"name": "dat_fzau",
+				"name": "awkey",
 				"type": "String"
 			},
 			{
-				"name": "fmbdat",
+				"name": "fikrs",
 				"type": "String"
 			},
 			{
-				"name": "vsnmr_v",
+				"name": "hwaer",
 				"type": "String"
 			},
 			{
-				"name": "handle",
+				"name": "hwae2",
 				"type": "String"
 			},
 			{
-				"name": "proli",
+				"name": "hwae3",
 				"type": "String"
 			},
 			{
-				"name": "cont_dg",
+				"name": "kurs2",
 				"type": "String"
 			},
 			{
-				"name": "crm_guid",
+				"name": "kurs3",
 				"type": "String"
 			},
 			{
-				"name": "upd_tmstmp",
+				"name": "basw2",
 				"type": "String"
 			},
 			{
-				"name": "msr_id",
+				"name": "basw3",
 				"type": "String"
 			},
 			{
-				"name": "tm_ctrl_key",
+				"name": "umrd2",
 				"type": "String"
 			},
 			{
-				"name": "handoverloc",
+				"name": "umrd3",
 				"type": "String"
 			},
 			{
-				"name": "dataaging",
+				"name": "xstov",
 				"type": "String"
 			},
 			{
-				"name": "glo_log_ref1_hd",
+				"name": "stodt",
 				"type": "String"
 			},
 			{
-				"name": "psm_budat",
+				"name": "xmwst",
 				"type": "String"
 			},
 			{
-				"name": "fsh_kvgr6",
+				"name": "curt2",
 				"type": "String"
 			},
 			{
-				"name": "fsh_kvgr7",
+				"name": "curt3",
 				"type": "String"
 			},
 			{
-				"name": "fsh_kvgr8",
+				"name": "kuty2",
 				"type": "String"
 			},
 			{
-				"name": "fsh_kvgr9",
+				"name": "kuty3",
 				"type": "String"
 			},
 			{
-				"name": "fsh_kvgr10",
+				"name": "xsnet",
 				"type": "String"
 			},
 			{
-				"name": "fsh_rereg",
+				"name": "ausbk",
 				"type": "String"
 			},
 			{
-				"name": "fsh_cq_check",
+				"name": "xusvr",
 				"type": "String"
 			},
 			{
-				"name": "fsh_vrsn_status",
+				"name": "duefl",
 				"type": "String"
 			},
 			{
-				"name": "fsh_transaction",
+				"name": "awsys",
 				"type": "String"
 			},
 			{
-				"name": "fsh_vas_cg",
+				"name": "txkrs",
 				"type": "String"
 			},
 			{
-				"name": "fsh_candate",
+				"name": "ctxkrs",
 				"type": "String"
 			},
 			{
-				"name": "fsh_ss",
+				"name": "lotkz",
 				"type": "String"
 			},
 			{
-				"name": "fsh_os_stg_change",
+				"name": "xwvof",
 				"type": "String"
 			},
 			{
-				"name": "swenr",
+				"name": "stgrd",
 				"type": "String"
 			},
 			{
-				"name": "smenr",
+				"name": "ppnam",
 				"type": "String"
 			},
 			{
-				"name": "phase",
+				"name": "ppdat",
 				"type": "String"
 			},
 			{
-				"name": "mtlaur",
+				"name": "pptme",
 				"type": "String"
 			},
 			{
-				"name": "stage",
+				"name": "pptcod",
 				"type": "String"
 			},
 			{
-				"name": "hb_cont_reason",
+				"name": "brnch",
 				"type": "String"
 			},
 			{
-				"name": "hb_expdate",
+				"name": "numpg",
 				"type": "String"
 			},
 			{
-				"name": "hb_resdate",
+				"name": "adisc",
 				"type": "String"
 			},
 			{
-				"name": "mill_appl_id",
+				"name": "xref1_hd",
 				"type": "String"
 			},
 			{
-				"name": "tas",
+				"name": "xref2_hd",
 				"type": "String"
 			},
 			{
-				"name": "betc",
+				"name": "xreversal",
 				"type": "String"
 			},
 			{
-				"name": "mod_allow",
+				"name": "reindat",
 				"type": "String"
 			},
 			{
-				"name": "cancel_allow",
+				"name": "rldnr",
 				"type": "String"
 			},
 			{
-				"name": "pay_method",
+				"name": "ldgrp",
 				"type": "String"
 			},
 			{
-				"name": "bpn",
+				"name": "propmano",
 				"type": "String"
 			},
 			{
-				"name": "rep_freq",
+				"name": "xblnr_alt",
 				"type": "String"
 			},
 			{
-				"name": "logsysb",
+				"name": "vatdate",
 				"type": "String"
 			},
 			{
-				"name": "kalcd",
+				"name": "doccat",
 				"type": "String"
 			},
 			{
-				"name": "multi",
+				"name": "xsplit",
 				"type": "String"
 			},
 			{
-				"name": "sppaym",
+				"name": "cash_alloc",
 				"type": "String"
 			},
 			{
-				"name": "wtysc_clm_hdr",
+				"name": "follow_on",
+				"type": "String"
+			},
+			{
+				"name": "xreorg",
+				"type": "String"
+			},
+			{
+				"name": "subset",
+				"type": "String"
+			},
+			{
+				"name": "kurst",
+				"type": "String"
+			},
+			{
+				"name": "kursx",
+				"type": "String"
+			},
+			{
+				"name": "kur2x",
+				"type": "String"
+			},
+			{
+				"name": "kur3x",
+				"type": "String"
+			},
+			{
+				"name": "xmca",
+				"type": "String"
+			},
+			{
+				"name": "resubmission",
+				"type": "String"
+			},
+			{
+				"name": "sapf15_status",
+				"type": "String"
+			},
+			{
+				"name": "psoty",
+				"type": "String"
+			},
+			{
+				"name": "psoak",
+				"type": "String"
+			},
+			{
+				"name": "psoks",
+				"type": "String"
+			},
+			{
+				"name": "psosg",
+				"type": "String"
+			},
+			{
+				"name": "psofn",
+				"type": "String"
+			},
+			{
+				"name": "intform",
+				"type": "String"
+			},
+			{
+				"name": "intdate",
+				"type": "String"
+			},
+			{
+				"name": "psobt",
+				"type": "String"
+			},
+			{
+				"name": "psozl",
+				"type": "String"
+			},
+			{
+				"name": "psodt",
+				"type": "String"
+			},
+			{
+				"name": "psotm",
+				"type": "String"
+			},
+			{
+				"name": "fm_umart",
+				"type": "String"
+			},
+			{
+				"name": "ccins",
+				"type": "String"
+			},
+			{
+				"name": "ccnum",
+				"type": "String"
+			},
+			{
+				"name": "ssblk",
+				"type": "String"
+			},
+			{
+				"name": "batch",
+				"type": "String"
+			},
+			{
+				"name": "sname",
+				"type": "String"
+			},
+			{
+				"name": "sampled",
+				"type": "String"
+			},
+			{
+				"name": "exclude_flag",
+				"type": "String"
+			},
+			{
+				"name": "blind",
+				"type": "String"
+			},
+			{
+				"name": "offset_status",
+				"type": "String"
+			},
+			{
+				"name": "offset_refer_dat",
+				"type": "String"
+			},
+			{
+				"name": "penrc",
+				"type": "String"
+			},
+			{
+				"name": "knumv",
+				"type": "String"
+			},
+			{
+				"name": "pybastyp",
+				"type": "String"
+			},
+			{
+				"name": "pybasno",
+				"type": "String"
+			},
+			{
+				"name": "pybasdat",
+				"type": "String"
+			},
+			{
+				"name": "pyiban",
+				"type": "String"
+			},
+			{
+				"name": "inwardno_hd",
+				"type": "String"
+			},
+			{
+				"name": "inwarddt_hd",
 				"type": "String"
 			},
 			{

@@ -1,16 +1,21 @@
 {
-	"name": "ds_bronze_mara",
+	"name": "ds_bronze",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adls_sapdata",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"file_name": {
+				"type": "string",
+				"defaultValue": "files"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "mara.csv",
 				"folderPath": "Bronze",
 				"fileSystem": "sapdata"
 			},
