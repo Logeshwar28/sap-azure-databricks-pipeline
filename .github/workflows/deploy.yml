@@ -6,6 +6,7 @@ on:
     paths:
       - 'sap_databricks_project/**'
       - 'Jobs/**'
+  workflow_dispatch:
 
 jobs:
   deploy:
