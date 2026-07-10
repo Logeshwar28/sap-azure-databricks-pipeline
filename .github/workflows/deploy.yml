@@ -39,21 +39,24 @@ jobs:
     - name: Deploy notebooks to Databricks
       run: |
         echo "🚀 Deploying notebooks..."
+        databricks workspace mkdirs /sap_databricks_project
         
-        databricks workspace mkdirs \
-          /sap_databricks_project
-        
-        for notebook in sap_databricks_project/*.py; do
-          name=$(basename "$notebook" .py)
-          echo "Deploying: $name"
-          databricks workspace import \
-            --file "$notebook" \
-            --language PYTHON \
-            --overwrite \
-            "/sap_databricks_project/$name"
-        done
-        
-        echo "✅ All notebooks deployed!"
+        if ls sap_databricks_project/*.ipynb 2>/dev/null; then
+          for notebook in sap_databricks_project/*.ipynb; do
+            name=$(basename "$notebook" .ipynb)
+            echo "Deploying: $name"
+            databricks workspace import \
+              --file "$notebook" \
+              --language PYTHON \
+              --format JUPYTER \
+              --overwrite \
+              "/sap_databricks_project/$name"
+          done
+          echo "✅ All notebooks deployed!"
+        else
+          echo "⚠️ No notebooks found"
+          ls -la sap_databricks_project/
+        fi
 
     - name: Verify deployment
       run: |
