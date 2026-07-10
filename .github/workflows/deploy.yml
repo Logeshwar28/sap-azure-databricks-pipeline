@@ -27,11 +27,14 @@ jobs:
         echo "✅ Databricks CLI installed"
 
     - name: Configure Databricks connection
+      env:
+        DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+        DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
       run: |
-        databricks configure --token <<EOF
-        ${{ secrets.DATABRICKS_HOST }}
-        ${{ secrets.DATABRICKS_TOKEN }}
-        EOF
+        databricks configure --token \
+          --host "$DATABRICKS_HOST" \
+          --token-value "$DATABRICKS_TOKEN"
+        echo "✅ Databricks configured!"
 
     - name: Validate notebook files
       run: |
