@@ -1,0 +1,72 @@
+name: SAP Databricks CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'sap_databricks_project/**'
+      - 'Jobs/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install Databricks CLI
+      run: |
+        pip install databricks-cli
+        echo "✅ Databricks CLI installed"
+
+    - name: Configure Databricks connection
+      run: |
+        databricks configure --token <<EOF
+        ${{ secrets.DATABRICKS_HOST }}
+        ${{ secrets.DATABRICKS_TOKEN }}
+        EOF
+
+    - name: Validate notebook files
+      run: |
+        echo "📋 Validating notebooks..."
+        ls -la sap_databricks_project/
+        echo "✅ Notebooks validated"
+
+    - name: Deploy notebooks to Databricks
+      run: |
+        echo "🚀 Deploying notebooks..."
+        
+        databricks workspace mkdirs \
+          /sap_databricks_project
+        
+        for notebook in sap_databricks_project/*.py; do
+          name=$(basename "$notebook" .py)
+          echo "Deploying: $name"
+          databricks workspace import \
+            "$notebook" \
+            "/sap_databricks_project/$name" \
+            --language PYTHON \
+            --overwrite
+        done
+        
+        echo "✅ All notebooks deployed!"
+
+    - name: Update Databricks Job
+      run: |
+        echo "🔄 Updating job configuration..."
+        databricks jobs reset \
+          --job-id ${{ secrets.DATABRICKS_JOB_ID }} \
+          --json-file Jobs/SAP_Orchestration_Pipeline.json
+        echo "✅ Job updated!"
+
+    - name: Verify deployment
+      run: |
+        echo "🔍 Verifying deployment..."
+        databricks workspace ls /sap_databricks_project
+        echo "✅ Deployment verified!"
