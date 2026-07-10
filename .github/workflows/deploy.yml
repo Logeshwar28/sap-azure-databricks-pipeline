@@ -12,6 +12,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     
+    env:
+      DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+      DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -21,26 +25,16 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Install Databricks CLI
+    - name: Install Databricks CLI (new version)
       run: |
-        pip install databricks-cli
+        curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+        databricks --version
         echo "✅ Databricks CLI installed"
 
-    - name: Configure Databricks connection
-      env:
-        DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
-        DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+    - name: Validate connection
       run: |
-        databricks configure --token \
-          --host "$DATABRICKS_HOST" \
-          --token-value "$DATABRICKS_TOKEN"
-        echo "✅ Databricks configured!"
-
-    - name: Validate notebook files
-      run: |
-        echo "📋 Validating notebooks..."
-        ls -la sap_databricks_project/
-        echo "✅ Notebooks validated"
+        databricks workspace list /
+        echo "✅ Connected to Databricks!"
 
     - name: Deploy notebooks to Databricks
       run: |
@@ -53,24 +47,16 @@ jobs:
           name=$(basename "$notebook" .py)
           echo "Deploying: $name"
           databricks workspace import \
-            "$notebook" \
-            "/sap_databricks_project/$name" \
+            --file "$notebook" \
             --language PYTHON \
-            --overwrite
+            --overwrite \
+            "/sap_databricks_project/$name"
         done
         
         echo "✅ All notebooks deployed!"
 
-    - name: Update Databricks Job
-      run: |
-        echo "🔄 Updating job configuration..."
-        databricks jobs reset \
-          --job-id ${{ secrets.DATABRICKS_JOB_ID }} \
-          --json-file Jobs/SAP_Orchestration_Pipeline.json
-        echo "✅ Job updated!"
-
     - name: Verify deployment
       run: |
-        echo "🔍 Verifying deployment..."
-        databricks workspace ls /sap_databricks_project
-        echo "✅ Deployment verified!"
+        echo "🔍 Verifying..."
+        databricks workspace list /sap_databricks_project
+        echo "✅ Deployment complete!"
