@@ -1,0 +1,71 @@
+{
+  "name": "SAP_Pipeline_Orchestration",
+  "email_notifications": {
+    "no_alert_for_skipped_runs": false
+  },
+  "webhook_notifications": {},
+  "timeout_seconds": 0,
+  "trigger": {
+    "pause_status": "UNPAUSED",
+    "periodic": {
+      "interval": 1,
+      "unit": "DAYS"
+    }
+  },
+  "max_concurrent_runs": 1,
+  "tasks": [
+    {
+      "task_key": "bronze_ingestion",
+      "run_if": "ALL_SUCCESS",
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/wlogesh282@gmail.com/sap-azure-databricks-pipeline/sap_databricks_project/01_bronze_layer",
+        "source": "WORKSPACE"
+      },
+      "existing_cluster_id": "0617-021726-a2oyh8rm",
+      "timeout_seconds": 0,
+      "email_notifications": {},
+      "webhook_notifications": {},
+      "disabled": false
+    },
+    {
+      "task_key": "silver_transform",
+      "depends_on": [
+        {
+          "task_key": "bronze_ingestion"
+        }
+      ],
+      "run_if": "ALL_SUCCESS",
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/wlogesh282@gmail.com/sap-azure-databricks-pipeline/sap_databricks_project/02_silver_layer",
+        "source": "WORKSPACE"
+      },
+      "existing_cluster_id": "0617-021726-a2oyh8rm",
+      "timeout_seconds": 0,
+      "email_notifications": {},
+      "webhook_notifications": {},
+      "disabled": false
+    },
+    {
+      "task_key": "gold_aggregation",
+      "depends_on": [
+        {
+          "task_key": "silver_transform"
+        }
+      ],
+      "run_if": "ALL_SUCCESS",
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/wlogesh282@gmail.com/sap-azure-databricks-pipeline/sap_databricks_project/03_gold_layer",
+        "source": "WORKSPACE"
+      },
+      "existing_cluster_id": "0617-021726-a2oyh8rm",
+      "timeout_seconds": 0,
+      "email_notifications": {},
+      "webhook_notifications": {},
+      "disabled": false
+    }
+  ],
+  "queue": {
+    "enabled": true
+  },
+  "performance_target": "PERFORMANCE_OPTIMIZED"
+}
