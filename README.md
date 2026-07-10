@@ -19,6 +19,56 @@ Gold Layer (Aggregated — Business Ready)
       ↓
 Unity Catalog (Governance)
 
+## Technology Stack
+
+- Azure Data Factory
+- Azure Data Lake Storage Gen2
+- Azure Databricks
+- Delta Live Tables (DLT)
+- Databricks Workflows
+- Unity Catalog
+- PySpark
+- Delta Lake
+- Git & GitHub
+- GitHub Actions (CI/CD)
+
+## Medallion Architecture
+
+Bronze
+- Raw SAP data
+- No business transformations
+- Traceability preserved
+
+Silver
+- Data cleansing
+- Remove duplicates
+- Rename business columns
+- Data quality validations
+
+Gold
+- Business-ready datasets
+- Customer sales
+- Product performance
+- Financial reporting
+
+## Pipeline Execution Flow
+
+ADF Pipeline
+        ↓
+ADLS Bronze
+        ↓
+Databricks Bronze Notebook
+        ↓
+Silver Notebook
+        ↓
+Gold Notebook
+        ↓
+DLT Pipeline
+        ↓
+Databricks Workflow
+        ↓
+Business Analytics
+
 ## Key Features
 - **Parameterized ADF Pipeline**: ForEach activity 
   dynamically processes 6 SAP tables — no hardcoding
@@ -64,6 +114,15 @@ Unity Catalog (Governance)
 3. Run ADF pipeline: pl_sap_bronze_ingestion
 4. Trigger Databricks Workflow: SAP_Pipeline_Orchestration
 5. Or push to main branch — CI/CD auto-deploys!
+
+## Business Benefits
+
+- Automated SAP data ingestion
+- Improved data quality
+- Scalable Medallion Architecture
+- Faster analytics
+- Enterprise-ready orchestration
+- Automated CI/CD deployment
 
 ## Author
 Logeshwaran Kanagaraj
